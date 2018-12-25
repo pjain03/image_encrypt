@@ -50,3 +50,22 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
