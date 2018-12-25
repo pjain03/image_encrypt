@@ -9,15 +9,19 @@
 #define ENCRYPTION_ALGORITHMS
 
 /*
- *  Every encryption algorithm we implement must include an init(char*)
- *  function that returns a crypt type structure which is defined below
+ *  Every encryption algorithm we implement must include a version of the
+ *  init function that returns a crypt type structure which is defined below
  */
 typedef struct {
     const char* name;
-    FILE* encrypt(FILE*, char*);
-    FILE* decrypt(FILE*, char*);
+    FILE* (*encrypt) (FILE*, char*);
+    FILE* (*decrypt) (FILE*, char*);
 } crypt;
 
+/*
+ * The version of this init that all the encryption algorithms implement must
+ * be included in the init function defined below to allow a user access
+ */
 crypt* init(const char*);
 
 #endif // ENCRYPTION_ALGORITHMS

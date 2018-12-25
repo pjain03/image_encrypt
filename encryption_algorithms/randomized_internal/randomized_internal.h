@@ -12,5 +12,7 @@
 #include "../encryption.h"
 
 crypt* init_randomized_internal();
+FILE* encrypt_randomized_internal(FILE*, char*);
+FILE* decrypt_randomized_internal(FILE*, char*);
 
 #endif // ENCRYPTION_ALGORITHMS_RANDOMIZED_INTERNAL
