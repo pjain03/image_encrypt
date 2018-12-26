@@ -8,6 +8,7 @@
 #ifndef ENCRYPTION_ALGORITHMS
 #define ENCRYPTION_ALGORITHMS
 
+#include <stdlib.h>
 #include <string.h>
 #include "crypt.h"
 #include "randomized_internal/randomized_internal.h"
@@ -18,5 +19,6 @@
  * Eg. init_randomized_internal()
  */
 crypt* init_encryption_algorithm(const char*);
+void free_crypt(crypt*);
 
 #endif // ENCRYPTION_ALGORITHMS

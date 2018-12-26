@@ -17,3 +17,7 @@ crypt* init_encryption_algorithm(const char* name) {
     }
     return init_randomized_internal();
 }
+
+void free_crypt(crypt* encryption_algorithm) {
+    free(encryption_algorithm);
+}
