@@ -9,7 +9,9 @@
 #ifndef ENCRYPTION_ALGORITHMS_RANDOMIZED_INTERNAL
 #define ENCRYPTION_ALGORITHMS_RANDOMIZED_INTERNAL
 
-#include "../encryption.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "../crypt.h"
 
 crypt* init_randomized_internal();
 FILE* encrypt_randomized_internal(FILE*, char*);

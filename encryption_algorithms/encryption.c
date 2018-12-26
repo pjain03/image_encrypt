@@ -10,11 +10,8 @@
  */
 
 #include "encryption.h"
-#include "randomized_internal/randomized_internal.h"
 
-crypt* init(const char* name) {
-    // return a crypt* based on the name provided
-    // if no name provided, return our default encryption algorithm
+crypt* init_encryption_algorithm(const char* name) {
     if(!strcmp(name, "randomized_internal")) {
         return init_randomized_internal();
     }

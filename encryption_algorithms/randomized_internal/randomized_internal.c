@@ -9,17 +9,17 @@
 #include "randomized_internal.h"
 
 FILE* encrypt_randomized_internal(FILE* img, char* key) {
-    // TODO
+    return img;
 }
 
 FILE* decrypt_randomized_internal(FILE* img, char* key) {
-    // TODO
+    return img;
 }
 
 crypt* init_randomized_internal() {
     crypt* randomized_internal = malloc(sizeof(crypt));
-    crypt->name = "Default Randomized Internal Encryption Algorithm";
-    crypt->encrypt = &encrypt_randomized_internal;
-    crypt->decrypt = &decrypt_randomized_internal;
-    return crypt;
+    randomized_internal->name = "Randomized Encryption [DEFAULT]";
+    randomized_internal->encrypt = &encrypt_randomized_internal;
+    randomized_internal->decrypt = &decrypt_randomized_internal;
+    return randomized_internal;
 }
