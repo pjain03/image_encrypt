@@ -5,11 +5,8 @@
  * Runs all our tests for the algorithms section of the project
  */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "../encryption.h"
-#include "../../utilities/utilities.h"
+#include "../../utilities/tools/tools.h"
 
 /*
  * Testing if default initialization works.
@@ -25,7 +22,20 @@ test* test1() {
     return t;
 }
 
+test* test2() {
+    crypt* def_init = init_encryption_algorithm("");
+    def_init->encrypt("", "", "");
+    def_init->decrypt("", "", "");
+    free_crypt(def_init);
+
+    test* t = malloc(sizeof(test));
+    t->msg = "Testing if encryption and decryption works";
+    t->result = 1;
+    return t;
+}
+
 int main() {
     log_tests(test1());
+    log_tests(test2());
     return EXIT_SUCCESS;
 }
