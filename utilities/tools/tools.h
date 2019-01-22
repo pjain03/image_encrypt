@@ -5,6 +5,9 @@
  * Interface providing common utility functions to other modules
  */
 
+#ifndef TOOLS_IMAGE_ENCRYPT
+#define TOOLS_IMAGE_ENCRYPT
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,3 +22,5 @@ typedef struct {
 } test;
 
 void log_tests(test*);
+
+#endif // TOOLS_IMAGE_ENCRYPT

@@ -8,12 +8,14 @@
 
 #include "randomized_internal.h"
 
-FILE* encrypt_randomized_internal(FILE* img, char* key) {
-    return img;
+void encrypt_randomized_internal(char* src, char* dst, char* key) {
+    int x, y, n;
+    unsigned char* data = stbi_load(src, &x, &y, &n, 3);
+    printf("ENCRYPT\n");
 }
 
-FILE* decrypt_randomized_internal(FILE* img, char* key) {
-    return img;
+void decrypt_randomized_internal(char* src, char* dst, char* key) {
+    printf("DECRYPT\n");
 }
 
 crypt* init_randomized_internal() {

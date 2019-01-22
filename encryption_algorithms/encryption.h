@@ -8,9 +8,7 @@
 #ifndef ENCRYPTION_ALGORITHMS
 #define ENCRYPTION_ALGORITHMS
 
-#include <stdlib.h>
-#include <string.h>
-#include "crypt.h"
+#include "encrypt_ty.h"
 #include "randomized_internal/randomized_internal.h"
 
 /*

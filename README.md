@@ -2,6 +2,8 @@
 Library and app to encrypt/decrypt images
 
 ## Encryption Algorithms:
+Each implemented encryption algorithm is responsible for reading from the source
+and writing to the destination. We use the [stb](https://github.com/nothings/stb) library by default.
 The following is a list of algorithms we provided in our project:
 
 ### Randomized Encryption Algorithm:

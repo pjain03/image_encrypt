@@ -5,8 +5,11 @@
  * Implementations of common utilities functions other modules will use
  */
 
-#include "utilities.h"
+#include "tools.h"
 
+/*
+ * Logs the test results using our test structure
+ */
 void log_tests(test* result) {
     printf("%s: ", result->msg);
     if(result->result)
