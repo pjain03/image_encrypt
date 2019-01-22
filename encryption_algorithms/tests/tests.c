@@ -5,8 +5,7 @@
  * Runs all our tests for the algorithms section of the project
  */
 
-#include "../encryption.h"
-#include "../../utilities/tools/tools.h"
+#include "tests.h"
 
 /*
  * Testing if default initialization works.
