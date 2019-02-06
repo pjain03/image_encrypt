@@ -1,3 +1,5 @@
 # Replace this with a Makefile at all levels
 
-clang ../randomized_internal/randomized_internal.c ../encryption.c ../../utilities/tools/tools.c tests.c -o tests
+clang ../../utilities/tools/tools.c ../encryption.c tests.c -o tests
+./tests
+rm tests

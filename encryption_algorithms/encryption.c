@@ -21,3 +21,19 @@ crypt* init_encryption_algorithm(const char* name) {
 void free_crypt(crypt* encryption_algorithm) {
     free(encryption_algorithm);
 }
+
+crypt* init_randomized_internal() {
+    crypt* randomized_internal = malloc(sizeof(crypt));
+    randomized_internal->name = "Randomized Encryption [DEFAULT]";
+    randomized_internal->encrypt = &encrypt_randomized_internal;
+    randomized_internal->decrypt = &decrypt_randomized_internal;
+    return randomized_internal;
+}
+
+void encrypt_randomized_internal(char* src, char* dst, char* key) {
+    printf("ENCRYPT\n");
+}
+
+void decrypt_randomized_internal(char* src, char* dst, char* key) {
+    printf("DECRYPT\n");
+}

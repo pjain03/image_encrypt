@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../utilities/stb/stb_image.h"
+// #include "../utilities/stb/stb_image.h"
 
 /*
  * Every encryption algorithm we implement must include a version of the
