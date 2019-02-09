@@ -10,6 +10,7 @@
 .history
 .svn/
 README.md
+etc.dart
 
 # IntelliJ related
 *.iml

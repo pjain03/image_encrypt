@@ -1,4 +1,8 @@
-///An app that encrypts images.
+/// Author: Satvik Sethia
+/// 01/03/2019
+/// 
+/// Frontend app that lets the user provide images to encrypt, 
+/// and choose the encryption algorithm to be used.
 
 import 'dart:async';
 import 'dart:io';
@@ -6,16 +10,26 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-void main() => runApp(new ImageEncrypt());
+import 'algorithm_select_route.dart';
+
+void main() => runApp(new ImageEncryptApp());
 
 ///The Material App widget.
-class ImageEncrypt extends StatelessWidget {
+class ImageEncryptApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       //TODO: Change names
-      title: 'Image Picker Demo',
-      home: new MyHomePage(title: 'Encrypt an Image'),
+      debugShowCheckedModeBanner: false,
+      title: 'Image Encrypt',
+      // home: new MyHomePage(title: 'Select an algorithm'),
+      // home: AlgorithmSelectRoute(),
+      home: AlgorithmSelect(),
+      routes: <String, WidgetBuilder>{
+        '/algorithm_select': (BuildContext context) => new AlgorithmSelect(),
+        // 'pricing': (BuildContext context) => new AlgorithmSelect(),
+        // '/pick_images': (BuildContext context) => new PickImages(),
+      },
     );
   }
 }
