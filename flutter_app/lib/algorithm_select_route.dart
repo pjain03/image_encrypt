@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertest/pick_one_image.dart';
+import 'package:fluttertest/pick_two_images.dart';
 
 class AlgorithmSelect extends StatefulWidget {
   @override
@@ -9,6 +11,8 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
   bool isDefault = false;
   bool isRubik = false;
   bool isMeaningful = false;
+
+  int numImages = 0;
 
   bool showProgressCircle = false;
 
@@ -36,6 +40,28 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
     });
   }
 
+  navigate() {
+    if (isDefault) {
+      Navigator.push(
+        context, MaterialPageRoute(
+          builder: (context) => PickOneImage(algo: "default"),
+        )
+      );
+    } else if (isRubik) {
+      Navigator.push(
+        context, MaterialPageRoute(
+          builder: (context) => PickOneImage(algo: "rubik"),
+        )
+      );
+    } else {
+      Navigator.push(
+        context, MaterialPageRoute(
+          builder: (context) => PickTwoImages(algo: "meaningful"),
+        )
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var titleBorder = new BorderDirectional(top: new BorderSide(color: Colors.blue, width: 3.0), start: new BorderSide(color: Colors.blue, width: 3.0), end: new BorderSide(color: Colors.blue, width: 3.0));
@@ -55,7 +81,7 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
       shape: isDefault ? titleBorder : null,
       margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
       child: new Container(
-        decoration: new BoxDecoration(color: Colors.black87),
+        decoration: new BoxDecoration(color: Colors.lightBlueAccent),
         child: new Column(
           children: <Widget>[
               new Padding(padding: EdgeInsets.fromLTRB(2.5, 0.5, 2.5, 2.5),),
@@ -64,15 +90,6 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
       ),
       ),
     );
-
-    // var defaultCost = new Card(
-    //   margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
-    //   child: new Container(
-    //     child: new Column(      
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //   ),
-    //   ),
-    // );
 
     var defaultDetails = new Card(
       shape: isDefault ? detailBorder : null,
@@ -92,7 +109,7 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
 
     var rubikTitle = new Card(
       shape: isRubik ? titleBorder : null,
-      margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
+      margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
       child: new Container(
         decoration: new BoxDecoration(color: Colors.teal),
         child: new Column(      
@@ -157,8 +174,8 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
 
     return new Scaffold(
       appBar: new AppBar(
-        title: new Image.asset('assets/logo.png'),
-        centerTitle: true,
+        // title: 'Select an algorithm',
+        // centerTitle: true,
         backgroundColor: Colors.blue,
       ),
       
@@ -210,7 +227,7 @@ class AlgorithmSelectState extends State<AlgorithmSelect> {
               child: new Text("Encrypt!", textScaleFactor: 1.5),
               padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
               color: Colors.blue,
-              onPressed: (isDefault || isRubik || isMeaningful) ? null : null,
+              onPressed: (isDefault || isRubik || isMeaningful) ? navigate : null,
             )
           )
         ]
